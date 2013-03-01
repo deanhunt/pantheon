@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
+<script>
+ 
+   $(document).ready(function() {
+        $( "#AC" ).autocomplete({
+            source: programmingLang
+        });
+    });
+    var programmingLang = ["ActionScript","AppleScript","Asp","BASIC","C","C++",
+        "Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell",
+        "Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
+  
+    //alert('hello world'); 
+    $( ".ui-autocomplete-input" ).autocomplete({ autoFocus: true });
+
+   // $( ".ui-autocomplete-input" ).autocomplete({ source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ] });
+
+ });
+</script>
+  
+  </head>
+  <body>
+      <form>
+      <input id="AC" type="text" />
+    </form>
+    <h1>Hello, world!</h1>
+   <div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags" class="ui-autocomplete-input"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible">6 results are available, use up and down arrow keys to navigate.</span>
+</div>
+    <script src="js/bootstrap.min.js"></script>
+  
+<div class="row-fluid">
+  <div class="span9">
+    Autocomplete here
+    <div class="row-fluid">
+      <div class="span3">Level 2</div>
+      <div class="span3">Level 2</div>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4">span 4</div>
+  <div class="span8">span 8 </div>
+</div>
+  </body>
+</html>

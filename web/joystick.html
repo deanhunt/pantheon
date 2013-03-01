@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DroneML Composer</title>
+
+    <link href="css/base.css" rel="stylesheet" media="screen">
+    <link href="css/joystick.css" rel="stylesheet" media="screen">
+    <link href="css/staffline.css" rel="stylesheet" media="screen">
+
+    <script src="js/jquery_v1.8.3.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+
+    <script src="js/joystick.js"></script>
+    <script src="js/staffline.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            window.staffLine = new StaffLine({el: $('#staff')});
+            staffLine.render();
+
+            window.joystick = new Joystick({
+                el: document.body,
+                staff: staffLine
+            });
+        });
+    </script>
+</head>
+<body>
+
+<script type="text/template" id="twitter-button-tmpl">
+    <a class="postFlightTwitterButton"
+       href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2FdroneML.com%2F&text=Check out my new flight path&tw_p=tweetbutton&url=http%3A%2F%2FdroneML.com%2F<%= tweet %>&via=arthackday">Tweet your flight path</a>
+</script>
+
+<script type="text/template" id="measure-tmpl">
+    <div class="measure">
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+</script>
+
+<div id="staff">
+    <div id="measures"></div>
+    <!--
+    <aside id="staff-url">
+        <input class="url"></input>
+        <button id="play-button">Play &gt;</button>
+    </aside>
+    <div class="tweetButton">
+        <a href='https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Farthackday.net%2Fgaffta%2F&text=Create and share your own drone flight path ↑↓↰↱↻↺ &tw_p=tweetbutton&url=http%3A%2F%2FdroneML.com&via=arthackday' id="preFlightTwitterButton">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    -->
+</div>
+
+<div id="joystick-composer">
+    <div class="x-controls">
+        <aside data-command="forward">↑</aside>
+        <aside data-command="backward">↓</aside>
+        <aside data-command="left">←</aside>
+        <aside data-command="right">→</aside>
+        <aside data-command="clockwise">↻</aside>
+        <aside data-command="counterclockwise">↺</aside>
+    </div>
+    <div class="y-controls">
+        <aside data-command="up">△</aside>
+        <aside data-command="down">▽</aside>
+    </div>
+    <div class="flight-controls">
+        <aside data-command="take-off">➚</aside>
+        <aside data-command="land">↘</aside>
+    </div>
+</div>
+
+<aside class="begin-flight">☁Fly!</aside>
+
+<footer>Made by Patrick Ewing, Dean Hunt and Olof Mathé during <a href="http://arthackday.net/gaffta">Art Hack Day SF 2012</a></footer>
+</body>
+</html>

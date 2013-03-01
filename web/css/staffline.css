@@ -1,0 +1,42 @@
+#staff {
+    font-size: 36pt;
+    -webkit-user-select: none;
+    text-align: center;
+}
+
+// HACK(dean): Temporarily removing our social strategy.
+#staff-url, .tweetButton {
+    display: none !important;
+}
+
+#staff-url {
+    display: inline-block;
+}
+
+#staff-url .url {
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+}
+
+#staff-url #play-button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.measure {
+    width: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.measure b {
+    display: block;
+    height: 1em;
+    width: 1em;
+    border-bottom: 2px solid #eee
+}
+
+.measure b.cursor {
+    background-color: red;
+}
