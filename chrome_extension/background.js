@@ -29,7 +29,7 @@ var Pantheon = {
 
     on: function(){
         this.isActive_ = true;
-        chrome.browserAction.setIcon({path: "icon_38_i.png"});
+        chrome.browserAction.setIcon({path: "icon_on_38.png"});
 
         this.bindTabEvents_();
         this.bindNetworkEvents_();
@@ -37,7 +37,7 @@ var Pantheon = {
 
     off: function(){
         this.isActive_ = false;
-        chrome.browserAction.setIcon({path: "icon_38_bw.png"});
+        chrome.browserAction.setIcon({path: "icon_off_38.png"});
 
         this.unbindTabEvents_();
         this.unbindNetworkEvents_();
