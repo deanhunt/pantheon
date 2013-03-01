@@ -13,6 +13,9 @@ var Pantheon = {
     recentlySentUrls_: [],
 
     initialize: function(){
+        // TODO(dean): Bootstrap with a list of 10 URLs from the server.
+        // Then continue pulling another 10 every time we make it down to 5.
+
         // Store the bound callback so we can unbind later.
         this.tabUpdatedBound_ = this.tabUpdated_.bind(this);
         this.tabCreatedBound_ = this.tabCreated_.bind(this);
