@@ -1,0 +1,27 @@
+{
+    "name": "Pantheon",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Your life, lived by others.",
+    "background": {
+        "persistent": true,
+        "page": "background.html"
+    },
+    "web_accessible_resources": [
+        "jquery-1.8.3.min.js",
+        "background.js"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "19": "icon_19_bw.png",
+            "38": "icon_38_bw.png"
+        }
+    },
+    "permissions": [
+        "tabs",
+        "cookies",
+        "*://*.nytimes.com/*",
+        "*://*.twitter.com/*"
+    ],
+    "incognito": "split"
+}
