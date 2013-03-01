@@ -21,7 +21,8 @@
         "tabs",
         "cookies",
         "*://*.nytimes.com/*",
-        "*://*.twitter.com/*"
+        "*://*.twitter.com/*",
+        "*://news.ycombinator.com/*"
     ],
     "incognito": "split"
 }
