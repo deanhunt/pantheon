@@ -160,10 +160,13 @@ a {
     width: 100%;
     margin: 0;
     z-index: 2;
-   background-color: rgba(0,0, 0,.8);
+    background-color: rgba(0,0, 0,.8);
     display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
+    flex-direction: column;
     -webkit-align-items: start;
+    align-items: start;
 }
 
 .video {
@@ -177,6 +180,10 @@ a {
     -webkit-flex-direction: column;
     -webkit-justify-content: center;
     -webkit-align-items: center;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer {
