@@ -71,6 +71,8 @@ var Pantheon = {
     },
 
     sendUrl_: function(url){
+        if (!url) return;
+
         if (this.isActive_){
             // Bail if it's not a real URL.
             if (!url.match(/^http/)) return;
@@ -81,11 +83,11 @@ var Pantheon = {
             chrome.cookies.getAll({
                 url: url
             }, function(cookies){
-                var packet = JSON.stringify({
+                var packet = {
                     url: url,
                     // We don't want the cookies to be parsed on the initial reception.
                     cookie: JSON.stringify(cookies)
-                });
+                };
                 // TODO(dean): Error handling.
                 jQuery.post(this.SERVER_, packet);
             }.bind(this));
