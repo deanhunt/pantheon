@@ -5,6 +5,7 @@ var urls = require('./urls');
 var olof = require('./olof');
 
 app.use(express.static(__dirname + '/web'));
+app.use(express.bodyParser());
 
 app.get('/urls', urls.list);
 app.post('/urls', urls.add);
