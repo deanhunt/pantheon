@@ -24,7 +24,8 @@ exports.add = function(req, res){
     var sites = getSites();
     sites.insert({
         url: req.body.url,
-        cookie: req.body.cookie
+        cookie: req.body.cookie,
+        time: +new Date()
     });
     res.send('OK');
 };
