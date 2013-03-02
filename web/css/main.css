@@ -158,18 +158,19 @@ nav a:hover {
 body {
     background-color: #000;
     text-align: center;
-    font-family: "skolar", serif;
-    line-height: 1.75;
+    /*font-family: "skolar", serif;*/
+    font-family: "anonymous-pro",monospace;
+    line-height: 2;
     color: rgba(255,255,255,.75);
 }
 
 .button {
     background-color: rgba(255,255,255,.65);
-    border-radius: 20px;
-    padding: 0 20px;
+    border-radius: 0px;
+    padding: 0 8px;
     line-height: 40px;
     display: block;
-    width: 210px;
+    width: 300px;
     margin: 30px auto;
     color: #222;
 }
@@ -186,7 +187,7 @@ body {
 .tagline {
     width: 436px;
     padding: 8px 0;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: normal;
     margin:-25px auto 30px auto;
     /*font-family: "proxima-nova",sans-serif;*/
@@ -197,19 +198,19 @@ body {
 }
 
 p {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .logo {
     margin: 100px auto 0 auto;
-    background: url(img/pantheon_logo.png) no-repeat;
+    background: url(/img/pantheon_logo.png) no-repeat;
     height: 200px;
     width: 607px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
    .logo {
-        background: url(img/pantheon_logo_2x.png) no-repeat;
+        background: url(/img/pantheon_logo_2x.png) no-repeat;
         background-size: 607px 200px;
     }
 }
