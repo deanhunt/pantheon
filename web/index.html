@@ -16,24 +16,31 @@
         </head>
     <body>
         <div class="wrapper">
-            <div class="logo">
+            <div class="main">
+                <div class="logo"></div>
+                <h1 class="tagline">Expose your Chrome</h1>
+                <p>Open a tab to be someone else<br /> for 10 seconds, but they might become you.</p>
+                <a class="button">
+                    Install the Chrome extension
+                </a>
             </div>
-            <h1 class="tagline">
-                Expose your Chrome
-            </h1>
-            <p>Open a tab to be someone else<br /> for 10 seconds, but they might become you.</p>
-            <a class="button">
-                Install the Chrome extension
-            </a>
         </div>
         <video id="Video1" style="position: absolute; z-index: 0; top: 0px; left: 0px; min-width: 100%; min-height: 100%;" poster="/img/tiltshifted.jpeg" autoplay="autoplay" src="/video/test.webm"></video>
-           
-       
 
-
+            <footer class="footer">
+                <p>Created at <a href="http://arthackday.net/god_mode/" title="Art Hack Day 2013 in Brooklyn">Art Hack Day :: God Mode :: 2013</a> in Brooklyn by <a href="https://twitter.com/deanhuntus" title="Dean Hunt">Dean Hunt</a>, <a href="https://twitter.com/olofster" title="Olof Mathé">Olof Mathé</a>, and <a href="http://dribbble.com/chanpory" title="Chanpory Rith">Chanpory Rith</a>
+                </p>
+            <footer>
+        </div> 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/main.js"></script>
+        <script>
+            var _gaq=[['_setAccount','UA-38963215-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
