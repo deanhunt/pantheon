@@ -176,13 +176,14 @@ a {
 
 .main {
     display: -webkit-flex;
+    display: flex;
     -webkit-flex: 1;
-    -webkit-flex-direction: column;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
     flex: 1;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
 }
 
