@@ -143,9 +143,6 @@ var Pantheon = {
         if (!this.matchesQuery_(url)){
             var prepend = (url.indexOf('?') !== -1) ? '&' : '?';
             url = site.url + prepend + this.QUERY_;
-            console.log('new url', url);
-        } else {
-            debugger
         }
 
         chrome.tabs.update(tab.id, {
