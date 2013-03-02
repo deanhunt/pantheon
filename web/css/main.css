@@ -172,7 +172,11 @@ a {
 }
 
 .main {
+    display: -webkit-flex;
     -webkit-flex: 1;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
 }
 
 .footer {
