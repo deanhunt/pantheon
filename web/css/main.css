@@ -149,7 +149,8 @@ a {
     color: #222;
 }
 
-.button:hover {
+.button:hover,
+.button:active {
     background-color: #fff;
 }
 
@@ -238,12 +239,6 @@ p {
 
 
 
-
-
-
-
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -274,6 +269,12 @@ p {
     .footer {
         width: 80%;
         margin: 10px auto;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    #Video1 {
+        display: none;
     }
 }
 
