@@ -30,6 +30,7 @@
         "*://news.ycombinator.com/*"
 =======
         "*://localhost/",
+        "*://*.pantheonapp.net/",
         "*://*.nytimes.com/*",
         "*://*.twitter.com/*",
         "*://*.ycombinator.com/*"
