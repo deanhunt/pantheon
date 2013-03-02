@@ -1,6 +1,6 @@
 // TODO(dean): License.
 var Pantheon = {
-    SERVER_: 'http://localhost:5000/urls',
+    SERVER_: 'http://www.pantheonapp.net/urls',
 
     isActive_: false,
 
