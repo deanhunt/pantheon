@@ -3,6 +3,12 @@ body.pntn-fader {
     -webkit-transition: all 8s cubic-bezier(1, 0, 1, .07);
 }
 
-body.pntn-disable {
-    pointer-events: none;
+body.pntn-body-disable {
+    pointer-events: none !important;
+}
+
+body.pntn-nav-disable a,
+body.pntn-nav-disable button,
+body.pntn-nav-disable input {
+    pointer-events: none !important;
 }

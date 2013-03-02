@@ -34,9 +34,10 @@ var PantheonContent = {
 
     beginFade_: function(){
         document.body.classList.add('pntn-fader');
+        document.body.classList.add('pntn-nav-disable');
 
         window.setTimeout(function(){
-            document.body.classList.add('pntn-disable');
+            document.body.classList.add('pntn-body-disable');
         }, 5000);
     }
 };
