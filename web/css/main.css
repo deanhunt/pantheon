@@ -179,7 +179,7 @@ a {
 }
 
 #Video1 {
-    -webkit-filter: blur(10px);
+    -webkit-filter: blur(2px);
 }
 
 .footer,
@@ -227,7 +227,7 @@ p {
     width: 607px;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
    .logo {
         background: url(/img/pantheon_logo_2x.png) no-repeat;
         background-size: 607px 200px;
