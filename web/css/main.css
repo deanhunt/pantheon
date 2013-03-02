@@ -147,6 +147,7 @@ a {
     width: 300px;
     margin: 30px auto;
     color: #222;
+    text-decoration: none;
 }
 
 .button:hover,
