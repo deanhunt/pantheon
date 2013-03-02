@@ -13,7 +13,7 @@ function getSites(req, res){
 
 exports.list = function(req, res){
     var sites = getSites();
-    sites.find().limit(10).sort({time: 1}).toArray(function(err, array){
+    sites.find().limit(10).sort({time: -1}).toArray(function(err, array){
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(JSON.stringify(array));
         res.end();
