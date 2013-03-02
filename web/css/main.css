@@ -175,6 +175,10 @@ body {
     color: #222;
 }
 
+.button:hover {
+    background-color: #fff;
+}
+
 .wrapper {
     position: absolute;
     height: 100%;
