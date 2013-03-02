@@ -1,6 +1,10 @@
 // TODO(dean): License.
 var Pantheon = {
+<<<<<<< HEAD
     SERVER_: '192.168.10.147:5000',
+=======
+    SERVER_: 'http://www.pantheonapp.net/urls',
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
 
     isActive_: false,
 
@@ -8,19 +12,32 @@ var Pantheon = {
 
     userId_: null,
 
+<<<<<<< HEAD
     availableUrls_: [],
+=======
+    availableSites_: [],
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
 
     recentlySentUrls_: [],
 
     initialize: function(){
+<<<<<<< HEAD
         // TODO(dean): Bootstrap with a list of 10 URLs from the server.
         // Then continue pulling another 10 every time we make it down to 5.
 
+=======
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
         // Store the bound callback so we can unbind later.
         this.tabUpdatedBound_ = this.tabUpdated_.bind(this);
         this.tabCreatedBound_ = this.tabCreated_.bind(this);
 
         this.bindBrowserEvents_();
+<<<<<<< HEAD
+=======
+
+        // Grab the initial bundle of sites.
+        this.getUrls_();
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     },
 
     isActive: function(){
@@ -32,7 +49,10 @@ var Pantheon = {
         chrome.browserAction.setIcon({path: "icon_on_38.png"});
 
         this.bindTabEvents_();
+<<<<<<< HEAD
         this.bindNetworkEvents_();
+=======
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     },
 
     off: function(){
@@ -40,7 +60,10 @@ var Pantheon = {
         chrome.browserAction.setIcon({path: "icon_off_38.png"});
 
         this.unbindTabEvents_();
+<<<<<<< HEAD
         this.unbindNetworkEvents_();
+=======
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     },
 
     bindBrowserEvents_: function(){
@@ -57,6 +80,7 @@ var Pantheon = {
         chrome.tabs.onCreated.removeListener(this.tabCreatedBound_);
     },
 
+<<<<<<< HEAD
     bindNetworkEvents_: function(){
         this.socket_ = new WebSocket("ws://" + this.SERVER_  + "/websocket");
         this.socket_.onmessage = this.onMessage_.bind(this);
@@ -96,6 +120,13 @@ var Pantheon = {
         } else if (data != 'OK'){
             this.userId_ = data;
         }
+=======
+    getUrls_: function(){
+        // TODO(dean): Handle error cases.
+        jQuery.get(this.SERVER_, function(data){
+            Array.prototype.push.apply(this.availableSites_, data);
+        }.bind(this));
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     },
 
     toggleApp_: function(tab){
@@ -118,6 +149,7 @@ var Pantheon = {
                 url: url
             }, function(cookies){
                 var packet = JSON.stringify({
+<<<<<<< HEAD
                     user_id: this.userId_,
                     url: url,
                     // We don't want the cookies to be parsed on the initial
@@ -128,6 +160,17 @@ var Pantheon = {
             }.bind(this));
 
             // Keep a short list of recently sent URLs.
+=======
+                    url: url,
+                    // We don't want the cookies to be parsed on the initial reception.
+                    cookie: JSON.stringify(cookies)
+                });
+                // TODO(dean): Error handling.
+                jQuery.post(this.SERVER_, packet);
+            }.bind(this));
+
+            // Keep a short list of recently sent URLs so we don't repeatedly send the same URL.
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
             if (this.recentlySentUrls_.length > 10){
                 this.recentlySentUrls_ = [];
             }
@@ -143,16 +186,50 @@ var Pantheon = {
         }.bind(this));
     },
 
+<<<<<<< HEAD
+=======
+    loadSite_: function(tab, site){
+        var cookie = site.cookie;
+        if (cookie){
+            JSON.parse(site.cookie).forEach(function(cookie){
+                // Set the URL for the current link.
+                cookie.url = url;
+
+                // Strip the unprocessable attributes from the new cookie.
+                delete cookie.hostOnly;
+                delete cookie.session;
+
+                chrome.cookies.set(cookie);
+            }.bind(this));
+        }
+
+        chrome.tabs.update(tab.id, {
+            url: site.url
+        });
+    },
+
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     tabCreated_: function(tab){
         // Ignore non-blank tabs.
         if (tab.url !== 'chrome://newtab/') return;
 
         // Bail if we don't have any new URLs.
+<<<<<<< HEAD
         if (!this.availableUrls_.length) return;
 
         chrome.tabs.update(tab.id, {
             url: this.availableUrls_.pop()
         })
+=======
+        if (!this.availableSites_.length) return;
+
+        var site = this.availableSites_.pop();
+        this.loadSite_(tab, site);
+
+        if (this.availableSites_.length < 6){
+            this.getUrls_();
+        }
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     }
 }
 Pantheon.initialize();

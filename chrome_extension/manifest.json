@@ -2,7 +2,11 @@
     "name": "Pantheon",
     "version": "0.1",
     "manifest_version": 2,
+<<<<<<< HEAD
     "description": "Your life, lived by others.",
+=======
+    "description": "Showing your Chrome",
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     "background": {
         "persistent": true,
         "page": "background.html"
@@ -20,9 +24,16 @@
     "permissions": [
         "tabs",
         "cookies",
+<<<<<<< HEAD
         "*://*.nytimes.com/*",
         "*://*.twitter.com/*",
         "*://news.ycombinator.com/*"
+=======
+        "*://localhost/",
+        "*://*.nytimes.com/*",
+        "*://*.twitter.com/*",
+        "*://*.ycombinator.com/*"
+>>>>>>> 84fb1730a2980e6ab43a3d7e5f1b0dd5767f635f
     ],
     "incognito": "split"
 }
