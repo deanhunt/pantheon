@@ -179,7 +179,7 @@ a {
 }
 
 #Video1 {
-    -webkit-filter: blur(10px);
+    -webkit-filter: blur(2px);
 }
 
 .footer,
