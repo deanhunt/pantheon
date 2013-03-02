@@ -1,11 +1,18 @@
-var users = [
-    { name: 'TJ', email: 'tj@vision-media.ca' },
-    { name: 'Tobi', email: 'tobi@vision-media.ca' }
+var urls = [
+    { url: 'http://www.foxnews.com', cookie: '' },
+    { url: 'http://news.ycombinator.com', cookie: '' },
+    { url: 'http://www.theonion.com', cookie: '' },
+    { url: 'http://www.slate.com', cookie: '' }
 ];
 
 exports.list = function(req, res){
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.write(JSON.stringify(users));
+    res.write(JSON.stringify(urls));
     res.end();
-  // res.render('users', { title: 'Users', users: users });
+};
+
+exports.add = function(req, res){
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.write('OK');
+    res.end();
 };
