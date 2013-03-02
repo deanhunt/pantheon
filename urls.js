@@ -6,7 +6,7 @@ var ObjectId = Mongolian.ObjectId;
 ObjectId.prototype.toJSON = ObjectId.prototype.toString;
 
 function getSites(req, res){
-    var connectionString = Config.getConnectionString();
+    var connectionString =  process.env.MONGO_SITES; //Config.getConnectionString();
     var db = new Mongolian(connectionString);
     return db.collection('sites');
 };
