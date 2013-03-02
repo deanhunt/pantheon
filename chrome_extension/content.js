@@ -37,7 +37,7 @@ var PantheonContent = {
 
         window.setTimeout(function(){
             document.body.classList.add('pntn-disable');
-        }, 2000);
+        }, 5000);
     }
 };
 PantheonContent.initialize();
