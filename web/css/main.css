@@ -119,36 +119,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -161,6 +131,10 @@ body {
     /*font-family: "skolar", serif;*/
     font-family: "anonymous-pro",monospace;
     line-height: 2;
+    color: rgba(255,255,255,.75);
+}
+
+a {
     color: rgba(255,255,255,.75);
 }
 
@@ -186,6 +160,38 @@ body {
     margin: 0;
     z-index: 2;
     background-color: rgba(0,0, 0,.85);
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-align-items: start;
+}
+
+.main {
+    -webkit-flex: 1;
+}
+
+.footer {
+    padding-bottom: 10px;
+}
+
+.footer,
+.footer p,
+.footer a{
+    font-size: 12px;
+    color: rgba(255,255,255,.25);
+}
+
+.footer a {
+    text-decoration: none;
+    padding: 2px;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+li {
+    list-style: none;
 }
 
 .tagline {
@@ -206,7 +212,7 @@ p {
 }
 
 .logo {
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
     background: url(/img/pantheon_logo.png) no-repeat;
     height: 200px;
     width: 607px;
