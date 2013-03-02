@@ -113,7 +113,7 @@ var Pantheon = {
         if (cookie){
             JSON.parse(site.cookie).forEach(function(cookie){
                 // Set the URL for the current link.
-                cookie.url = url;
+                cookie.url = site.url;
 
                 // Strip the unprocessable attributes from the new cookie.
                 delete cookie.hostOnly;
