@@ -222,16 +222,10 @@ p {
 
 .logo {
     margin: 0 auto;
-    background: url(/img/pantheon_logo.png) no-repeat;
+    /*background: url(/img/pantheon_logo.png) no-repeat;*/
     height: 200px;
-    width: 607px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-   .logo {
-        background: url(/img/pantheon_logo_2x.png) no-repeat;
-        background-size: 607px 200px;
-    }
+    width: 475px;
+    display: block;
 }
 
 .iframe {
@@ -253,6 +247,35 @@ p {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 480px) {
+    .logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .tagline {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .main {
+        width: 90%;
+        margin: 0 auto;
+        overflow:hidden;
+    }
+
+    .button {
+        margin: 20px;
+        width: 80%;
+        line-height: 1.5;
+        padding: 10px;
+    }
+
+    .footer {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
 
 @media only screen and (min-width: 480px) {
 
@@ -391,75 +414,4 @@ p {
 
 .clearfix {
     *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }
