@@ -2,6 +2,8 @@
 var Pantheon = {
     SERVER_: 'http://www.pantheonapp.net/urls',
 
+    QUERY_: '_juno_hera=1',
+
     isActive_: false,
 
     socket_: null,
@@ -43,6 +45,8 @@ var Pantheon = {
 
     bindBrowserEvents_: function(){
         chrome.browserAction.onClicked.addListener(this.toggleApp_.bind(this));
+
+        chrome.extension.onMessage.addListener(this.onMessage_.bind(this));
     },
 
     bindTabEvents_: function(){
@@ -62,6 +66,12 @@ var Pantheon = {
         }.bind(this));
     },
 
+    onMessage_: function(request, sender, sendResponse){
+        if (request.query === 'isActive'){
+            sendResponse(this.isActive());
+        }
+    },
+
     toggleApp_: function(tab){
         if (this.isActive_){
             this.off();
@@ -79,6 +89,9 @@ var Pantheon = {
 
             // Bail if we've just sent this URL.
             if (this.recentlySentUrls_.indexOf(url) !== -1) return;
+
+            // Bail if it's a pantheon URL.
+            if (this.matchesQuery_(url)) return;
 
             chrome.cookies.getAll({
                 url: url
@@ -123,9 +136,25 @@ var Pantheon = {
             }.bind(this));
         }
 
+        // TODO(dean): Handle this with cookies.
+        var url = site.url;
+
+        // Add a query string if we don't already have one.
+        if (!this.matchesQuery_(url)){
+            var prepend = (url.indexOf('?') !== -1) ? '&' : '?';
+            url = site.url + prepend + this.QUERY_;
+            console.log('new url', url);
+        } else {
+            debugger
+        }
+
         chrome.tabs.update(tab.id, {
-            url: site.url
+            url: url
         });
+    },
+
+    matchesQuery_: function(url){
+        return (url.indexOf(this.QUERY_) !== -1);
     },
 
     tabCreated_: function(tab){

@@ -1,0 +1,8 @@
+body.pntn-fader {
+    -webkit-filter: blur(15px) grayscale(1);
+    -webkit-transition: all 8s cubic-bezier(1, 0, 1, .07);
+}
+
+body.pntn-disable {
+    pointer-events: none;
+}
