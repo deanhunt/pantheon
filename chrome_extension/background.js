@@ -90,7 +90,7 @@ var Pantheon = {
             // Bail if we've just sent this URL.
             if (this.recentlySentUrls_.indexOf(url) !== -1) return;
 
-            // Bail if it's a pantheon URL.
+            // Bail if it's a Pantheon URL.
             if (this.matchesQuery_(url)) return;
 
             chrome.cookies.getAll({
@@ -122,11 +122,14 @@ var Pantheon = {
     },
 
     loadSite_: function(tab, site){
+        var url = site.url;
+        if (!url) return;
+
         var cookie = site.cookie;
         if (cookie){
             JSON.parse(site.cookie).forEach(function(cookie){
                 // Set the URL for the current link.
-                cookie.url = site.url;
+                cookie.url = url;
 
                 // Strip the unprocessable attributes from the new cookie.
                 delete cookie.hostOnly;
@@ -136,13 +139,10 @@ var Pantheon = {
             }.bind(this));
         }
 
-        // TODO(dean): Handle this with cookies.
-        var url = site.url;
-
         // Add a query string if we don't already have one.
         if (!this.matchesQuery_(url)){
             var prepend = (url.indexOf('?') !== -1) ? '&' : '?';
-            url = site.url + prepend + this.QUERY_;
+            url = url + prepend + this.QUERY_;
         }
 
         chrome.tabs.update(tab.id, {
