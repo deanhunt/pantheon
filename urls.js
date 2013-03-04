@@ -1,5 +1,4 @@
 var Mongolian = require('mongolian');
-// var Config = require('./config');
 
 // Make BSON play nicely with us.
 var ObjectId = Mongolian.ObjectId;
