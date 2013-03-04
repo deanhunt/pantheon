@@ -1,14 +1,13 @@
-var express = require('express');
+var Express = require('Express');
+var Urls = require('./urls');
 
-var app = express.createServer(express.logger());
-var urls = require('./urls');
+var app = Express.createServer(Express.logger());
 
-app.use(express.static(__dirname + '/web'));
-app.use(express.bodyParser());
+app.use(Express.static(__dirname + '/web'));
+app.use(Express.bodyParser());
 
-app.get('/urls', urls.list);
-app.post('/urls', urls.add);
-
+app.get('/urls', Urls.list);
+app.post('/urls', Urls.add);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function(){
