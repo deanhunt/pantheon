@@ -1,6 +1,6 @@
 {
     "name": "Pantheon",
-    "version": "0.1",
+    "version": "0.2",
     "manifest_version": 2,
     "description": "Showing your Chrome",
     "background": {
@@ -39,8 +39,7 @@
     },
     "permissions": [
         "tabs",
-        "cookies",
-        "<all_urls>"
+        "http://www.pantheonapp.net/urls/*"
     ],
     "incognito": "split"
 }
