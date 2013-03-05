@@ -1,4 +1,4 @@
-Pantheon is a Chrome extension built during [Art Hack Day God Mode]("http://arthackday.net/god_mode/") 
+Pantheon is a Chrome extension built during [Art Hack Day :: God Mode]("http://arthackday.net/god_mode/") at 319 Scholes NYC Feb 28 - March 2, 2013
 
 To us, "God Mode" is omniscience and omnipotence. It's how the NSA might eavesdrop or how a hardware manufacturer might backdoor into your device without your knowledge. There are plenty of examples of this happening in real life - [Amazon deleting Orwell's “1984” from people's Kindles without their consent]("http://arstechnica.com/gadgets/2009/07/amazon-sold-pirated-books-raided-some-kindles/") comes to mind. 
 
