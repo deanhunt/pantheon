@@ -16,7 +16,7 @@ if (process.env.MONGO_SITES){
 exports.list = function(isGod, callback){
     var collection = (isGod) ? 'godsites' : 'demisites';
     var sites = db.collection(collection);
-    collection.find().limit(10).sort({time: -1}).toArray(function(err, array){
+    sites.find().limit(10).sort({time: -1}).toArray(function(err, array){
         callback(array);
     });
 };
@@ -24,5 +24,5 @@ exports.list = function(isGod, callback){
 exports.add = function(isGod, data){
     var collection = (isGod) ? 'godsites' : 'demisites';
     var sites = db.collection(collection);
-    collection.insert(data);
+    sites.insert(data);
 };
