@@ -13,18 +13,16 @@ if (process.env.MONGO_SITES){
     db = server.db('pantheon-app');
 }
 
-exports.list = function(callback){
-    var sites = db.collection('sites');
-    sites.find().limit(10).sort({time: -1}).toArray(function(err, array){
+exports.list = function(isGod, callback){
+    var collection = (isGod) ? 'godsites' : 'demisites';
+    var sites = db.collection(collection);
+    collection.find().limit(10).sort({time: -1}).toArray(function(err, array){
         callback(array);
     });
 };
 
-exports.add = function(data){
-    var sites = db.collection('sites');
-    sites.insert({
-        url: data.url,
-        cookie: data.cookie,
-        time: data.time
-    });
+exports.add = function(isGod, data){
+    var collection = (isGod) ? 'godsites' : 'demisites';
+    var sites = db.collection(collection);
+    collection.insert(data);
 };
