@@ -1,9 +1,9 @@
 var Pantheon = {
     // Access point for God mode (with cookies).
-    GOD_SERVER: 'http://localhost:5000/urls/god',
+    GOD_SERVER: 'http://www.pantheonapp.net/urls/god',
 
     // Access point for Demigod mode (no cookies).
-    DEMI_GOD_SERVER: 'http://localhost:5000/urls/demi',
+    DEMI_GOD_SERVER: 'http://www.pantheonapp.net/urls/demi',
 
     // This is the magic switch: whether we're participating in cookie sharing.
     //
