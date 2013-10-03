@@ -25,6 +25,25 @@ body {
     text-shadow: none;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(255,255,255,0.4);
+}
+
+.wall-text {
+    height: 200px;
+    overflow: auto;
+    width: 680px;
+    margin-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    background-color: transparent;
+}
+
 hr {
     display: block;
     height: 1px;
