@@ -192,10 +192,6 @@ a {
     padding-bottom: 10px;
 }
 
-#Video1 {
-    -webkit-filter: blur(2px);
-}
-
 .footer,
 .footer p,
 .footer a{
